@@ -1,24 +1,16 @@
 ---
 page_type: sample
 languages:
-- csharp
+- java
 products:
-- dotnet
-description: "Add 150 character max description"
+- azure functions
+description: "Sample project for showcase of "
 urlFragment: "update-this-to-unique-url-stub"
 ---
 
-# Official Microsoft Sample
+# Azure Functions example in Java
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
-
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
-
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
-
-Give a short description for your sample here. What does it do and why is it important?
+This sample show a basis usage for how to use [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.
 
 ## Contents
 
@@ -28,6 +20,8 @@ Outline the file contents of the repository. It helps users navigate the codebas
 |-------------------|--------------------------------------------|
 | `src`             | Sample source code.                        |
 | `.gitignore`      | Define what to ignore at commit time.      |
+| `build.gradle`    | The gradle configuration to this sample.   |
+| `pom.xml`         | The maven configuration to this sample.   |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
 | `README.md`       | This README file.                          |
@@ -35,19 +29,29 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+- Gradle 4.10+
+- Latest [Function Core Tools](https://aka.ms/azfunc-install)
+- Azure CLI. This plugin use Azure CLI for authentication, please make sure you have Azure CLI installed and logged in.
 
 ## Setup
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+```cmd
+az login
+az account set -s <your subscription id>
+```
 
 ## Running the sample
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+```cmd
+./mvnw clean package azure-functions:deploy
+```
 
-## Key concepts
+```cmd
+./gradlew clean azureFunctionsDeploy
+```
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+> NOTE: please replace '/' with '\\' when you are running on windows.
+
 
 ## Contributing
 
