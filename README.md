@@ -4,7 +4,7 @@ languages:
 - java
 products:
 - azure functions
-description: "This repository contains sample for the Azure Functions in Java"
+description: "This repository contains sample for Azure Functions in Java"
 urlFragment: "azure-functions-java"
 ---
 
