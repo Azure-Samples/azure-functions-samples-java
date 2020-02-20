@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License. See License.txt in the project root for
+ * license information.
+ *
+ * Copied from https://github.com/microsoft/azure-gradle-plugins/blob/master/azure-functions-gradle-plugin/src/main/
+ * java/com/microsoft/azure/plugin/functions/gradle/util/FunctionCliResolver.java
+ */
+
 package com.functions;
 
 import java.util.*;

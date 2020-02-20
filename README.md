@@ -25,7 +25,7 @@ Outline the file contents of the repository. It helps users navigate the codebas
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
 | `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+| `LICENSE.txt`         | The license for the sample.                |
 
 ## Prerequisites
 
