@@ -1,18 +1,5 @@
-buildscript {
-  repositories {
-    mavenLocal()
-    jcenter()
-    // maven {
-    //     url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    // }
-    maven {
-        //will be replaced when we release it to maven central        
-        url 'https://pkgs.dev.azure.com/azure-toolkits/Java/_packaging/azure-toolkits-maven/maven/v1'
-    }
-  }
-  dependencies {
-    classpath "com.microsoft.azure:azure-functions-gradle-plugin:1.0.0-SNAPSHOT"
-  }
+plugins {
+  id "com.microsoft.azure.azurefunctions" version "1.0.0-RC"
 }
 
 apply plugin: 'java'
