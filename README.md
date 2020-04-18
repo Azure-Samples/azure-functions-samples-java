@@ -83,5 +83,3 @@ This project collects usage data and sends it to Microsoft to help improve our p
 Read Microsoft's [privacy statement](https://privacy.microsoft.com/en-us/privacystatement) to learn more.
 If you would like to opt out of sending telemetry data to Microsoft, you can set `allowTelemetry` to false in the plugin configuration.
 Please read our [document](https://github.com/microsoft/azure-gradle-plugins/wiki/Configuration) to find more details about *allowTelemetry*.
-
-git remote set-url origin https://github.com/jabrena/azure-functions-samples-java.git
