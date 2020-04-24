@@ -21,7 +21,7 @@ public class Function {
      * Function Key is not needed when running locally, it is used to invoke function deployed to Azure.
      * More details: https://aka.ms/functions_authorization_keys
      */
-    @FunctionName("HttpTrigger-Java")
+    @FunctionName("HttpExample")
     public HttpResponseMessage run(
             @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
             final ExecutionContext context) {
@@ -34,7 +34,7 @@ public class Function {
         if (name == null) {
             return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
         } else {
-            return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+            return request.createResponseBuilder(HttpStatus.OK).body("Hello " + name + "!").build();
         }
     }
 }
