@@ -43,6 +43,17 @@ az account set -s <your subscription id>
 ## Running the sample
 
 ```cmd
+./mvnw clean package azure-functions:run
+```
+
+```cmd
+./gradlew clean azureFunctionsRun
+```
+
+## Deploy the sample on Azure
+
+
+```cmd
 ./mvnw clean package azure-functions:deploy
 ```
 
