@@ -29,7 +29,7 @@ azurefunctions {
     region = 'westus'
     runtime {
       os = 'windows'
-      javaVersion = '11'
+      javaVersion = '8'
     }
     localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }
