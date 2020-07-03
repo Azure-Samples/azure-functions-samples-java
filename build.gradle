@@ -1,5 +1,5 @@
 plugins {
-  id "com.microsoft.azure.azurefunctions" version "1.3.0"
+  id "com.microsoft.azure.azurefunctions" version "1.4.0"
 }
 apply plugin: 'java'
 apply plugin: "com.microsoft.azure.azurefunctions"
@@ -29,6 +29,7 @@ azurefunctions {
     region = 'westus'
     runtime {
       os = 'windows'
+      javaVersion = '8'
     }
     localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }
