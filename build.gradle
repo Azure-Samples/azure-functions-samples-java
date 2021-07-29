@@ -1,5 +1,5 @@
 plugins {
-  id "com.microsoft.azure.azurefunctions" version "1.5.1"
+  id "com.microsoft.azure.azurefunctions" version "1.6.0"
 }
 apply plugin: 'java'
 apply plugin: "com.microsoft.azure.azurefunctions"
