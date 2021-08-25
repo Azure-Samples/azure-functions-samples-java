@@ -1,5 +1,5 @@
 plugins {
-  id "com.microsoft.azure.azurefunctions" version "1.6.0"
+  id "com.microsoft.azure.azurefunctions" version "1.7.0"
 }
 apply plugin: 'java'
 apply plugin: "com.microsoft.azure.azurefunctions"
@@ -28,8 +28,11 @@ azurefunctions {
     pricingTier = 'Consumption'
     region = 'westus'
     runtime {
-      os = 'windows'
-      javaVersion = '8'
+      os = 'Windows'
+      javaVersion = 'Java 8'
+    }
+    auth {
+      type = 'azure_cli'
     }
     localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }
