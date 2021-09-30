@@ -13,7 +13,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <azure.functions.maven.plugin.version>1.13.0</azure.functions.maven.plugin.version>
+        <azure.functions.maven.plugin.version>1.14.0</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>1.4.2</azure.functions.java.library.version>
         <functionAppName>azure-functions-sample</functionAppName>
         <functionAppRegion>westus</functionAppRegion>
