@@ -35,10 +35,23 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 ## Setup
 
-```cmd
-az login
-az account set -s <your subscription id>
-```
+- ```cmd
+    az login
+    az account set -s <your subscription id>
+    ```
+- Update the Application settings in Azure portal with the required parameters as below
+  - AzureWebJobsStorage: Connection string to your storage account
+  - CosmosDBDatabaseName: Cosmos database name. Example: ItemCollectionIn
+  - CosmosDBCollectionName:Cosmos database collection name. Example: ItemDb
+  - AzureWebJobsCosmosDBConnectionString: Connection string to your Cosmos database
+  - AzureWebJobsEventGridOutputBindingTopicUriString: Event Grid URI
+  - AzureWebJobsEventGridOutputBindingTopicKeyString: Event Grid string
+  - AzureWebJobsEventHubSender, AzureWebJobsEventHubSender_2 : Event hub connection string
+  - AzureWebJobsServiceBus: Service bus connection string
+  - SBQueueName: Service bus queue name. Example: test-input-java
+  - SBTopicName: Service bus topic name. Example: javaworkercitopic2
+  - SBTopicSubName: Service bus topic name. Example: javaworkercisub
+- Update `host.json` with the right extension bundle version. `V3 - [1.*, 2.0.0) and V4 - [2.*, 3.0.0)`
 
 ## Running the sample
 
