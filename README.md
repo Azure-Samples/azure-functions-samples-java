@@ -3,7 +3,7 @@ page_type: sample
 languages:
 - java
 products:
-- azure functions
+- azure-functions
 description: "This repository contains sample for Azure Functions in Java"
 urlFragment: "azure-functions-java"
 ---
