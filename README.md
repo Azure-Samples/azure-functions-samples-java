@@ -4,13 +4,14 @@ languages:
 - java
 products:
 - azure-functions
+- azure
 description: "This repository contains sample for Azure Functions in Java"
 urlFragment: "azure-functions-java"
 ---
 
-# Azure Functions example in Java
+# Azure Functions samples in Java
 
-This sample show a basis usage for how to use *http-trigger* for [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.
+This repository contains samples which show the basis usage of [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.
 
 ## Contents
 
