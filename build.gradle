@@ -8,17 +8,21 @@ group 'com.functions'
 version '1.0-SNAPSHOT'
 
 dependencies {
-    implementation 'com.microsoft.azure.functions:azure-functions-java-library:1.4.2'
+    implementation 'com.microsoft.azure.functions:azure-functions-java-library:2.0.0-SNAPSHOT'
+    implementation 'com.microsoft.durabletask:durabletask-azurefunctions:0.1.0-SNAPSHOT'
+    implementation 'com.microsoft.durabletask:durabletask-sdk:0.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
     testImplementation 'org.mockito:mockito-core:3.3.3'
+    runtimeOnly "io.grpc:grpc-netty-shaded:1.38.0"
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -29,7 +33,7 @@ azurefunctions {
     region = 'westus'
     runtime {
       os = 'Windows'
-      javaVersion = 'Java 8'
+      javaVersion = 'Java 11'
     }
     auth {
       type = 'azure_cli'

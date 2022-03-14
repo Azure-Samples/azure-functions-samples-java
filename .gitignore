@@ -55,3 +55,6 @@ bin/
 build/
 
 .gradle/
+
+# .NET SDK artifacts when using extensions.csproj instead of bundles
+obj/
