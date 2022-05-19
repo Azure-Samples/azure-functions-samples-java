@@ -134,10 +134,10 @@ public class EventHubTriggerFunctionTest {
 
     @Test
     public void testEventHubTriggerAndOutputBinaryCardinalityManyArrayBinaryJava() throws Exception {
-        byte[][] messageAsTwoDimensionalByteArray = new byte[2][2];
+        byte[][] twoDimensionalByteArray = new byte[2][2];
 
-        eventHubTriggerFunction.EventHubTriggerAndOutputBinaryCardinalityManyArrayBinary(messageAsTwoDimensionalByteArray, outputAsByteArray, context);
+        eventHubTriggerFunction.EventHubTriggerAndOutputBinaryCardinalityManyArrayBinary(twoDimensionalByteArray, outputAsByteArray, context);
 
-        assertEquals(messageAsTwoDimensionalByteArray[0], outputAsByteArray.getValue());
+        assertEquals(twoDimensionalByteArray[0], outputAsByteArray.getValue());
     }
 }
