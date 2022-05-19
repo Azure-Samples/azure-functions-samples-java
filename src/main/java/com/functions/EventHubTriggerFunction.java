@@ -114,5 +114,12 @@ public class EventHubTriggerFunction {
         public String Offset;
         public String PartitionKey;
         public String EnqueuedTimeUtc;
+
+        public SystemProperty(String sequenceNumber, String offset, String partitionKey, String enqueuedTimeUtc) {
+            this.SequenceNumber = sequenceNumber;
+            this.Offset = offset;
+            this.PartitionKey = partitionKey;
+            this.EnqueuedTimeUtc = enqueuedTimeUtc;
+        }
     }
 }
