@@ -22,6 +22,8 @@ import java.util.Optional;
  * Azure Functions with HTTP Trigger.
  */
 public class Function {
+    public static int count = 1;
+
     /**
      * This function listens at endpoint "/api/HttpExample". Two ways to invoke it using "curl" command in bash:
      * 1. curl -d "HTTP Body" {your host}/api/HttpExample
@@ -47,8 +49,6 @@ public class Function {
             return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
         }
     }
-
-    public static int count = 1;
 
     /**
      * This function listens at endpoint "/api/HttpExampleRetry". The function is re-executed in case of errors until the maximum number of retries occur.
@@ -97,7 +97,7 @@ public class Function {
         context.getLogger().info("Java HTTP trigger processed a request.");
         final String javaVersion = getJavaVersion();
         context.getLogger().info("Function - HttpTriggerJavaVersion" + javaVersion);
-        return request.createResponseBuilder(HttpStatus.OK).body("HttpTriggerJavaVersion").build();
+        return request.createResponseBuilder(HttpStatus.OK).body(javaVersion).build();
     }
 
     public static String getJavaVersion() {
