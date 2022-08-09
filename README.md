@@ -11,7 +11,23 @@ urlFragment: "azure-functions-java"
 
 # Azure Functions samples in Java
 
-This repository contains samples which show the basis usage of [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.
+This repository contains samples which show the basic usage of [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java for the below scenarios.
+
+| Scenario       | Description                                |
+|-------------------|--------------------------------------------|
+| [HttpTrigger](./src/main/java/com/functions/Function.java) | Basic HttpTrigger and FixedDelayRetry with HttpTrigger.  |
+| [BlobTrigger](./src/main/java/com/functions/BlobTriggerFunction.java) | BlobTrigger, read blob using BlobInput binding and output to blob using BlobOutput binding.  |
+| [CosmosDBTrigger](./src/main/java/com/functions/CosmosDBTriggerFunction.java)  | CosmosDBTrigger, read cosmos DB entries with CosmosDBInput binding and output to cosmos DB CosmosDBOutput binding.  |
+| [TimerTrigger](./src/main/java/com/functions/TimerTriggerFunction.java) | Basic periodic TimerTrigger.  |
+| [EventGridTrigger](./src/main/java/com/functions/EventGridTriggerFunction.java) | EventGridTrigger and send event to Event Grid using EventGridOutput binding.  |
+| [EventHubTrigger](./src/main/java/com/functions/EventHubTriggerFunction.java) | EventHubTrigger for message received in event grid and output to event grid using EventHubOutput binding.  |
+| [KafkaTrigger](./src/main/java/com/functions/KafkaTriggerFunction.java) | KafkaTrigger with KafkaOutput and QueueOutput example.  |
+| [QueueTrigger](./src/main/java/com/functions/QueueTriggerFunction.java) | QueueTrigger to read content from queue and output to queue using QueueOutput binding.  |
+| [ServiceBusQueueTrigger](./src/main/java/com/functions/ServiceBusQueueTriggerFunction.java) | ServiceBusQueueTrigger to read message from a queue in service bus and output to service bus queue using ServiceBusQueueOutput binding.  |
+| [ServiceBusTopicTrigger](./src/main/java/com/functions/ServiceBusTopicTriggerFunction.java) | ServiceBusTopicTrigger to read message from a topic in service bus and output to service bus topic using ServiceBusTopicOutput binding.  |
+| [Table function](./src/main/java/com/functions/TableFunction.java) | Basic example to read and write to table in Azure Storage using TableInput and TableOutput binding.  |
+| [Durable Function](./src/main/java/com/functions/DurableFunction.java) | Durable function example to start an orchestration and follow activity chaining.  |
+
 
 ## Contents
 
