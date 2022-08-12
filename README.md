@@ -68,7 +68,9 @@ Outline the file contents of the repository. It helps users navigate the codebas
   - SBQueueName: Service bus queue name. Example: test-input-java
   - SBTopicName: Service bus topic name. Example: javaworkercitopic2
   - SBTopicSubName: Service bus topic name. Example: javaworkercisub
+  - Documentation on how to [manage connection strings](https://docs.microsoft.com/en-gb/azure/storage/common/storage-account-keys-manage?tabs=azure-portal) and [access keys](https://docs.microsoft.com/en-gb/azure/storage/common/storage-configure-connection-string#create-a-connection-string-for-an-azure-storage-account)
 - Update `host.json` with the right extension bundle version. `V3 - [1.*, 2.0.0) and V4 - [2.*, 3.0.0)`
+
 
 ## Running the sample
 
