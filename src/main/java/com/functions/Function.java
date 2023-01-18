@@ -16,6 +16,8 @@ import com.microsoft.azure.functions.annotation.FixedDelayRetry;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.Optional;
 
 /**
@@ -102,5 +104,30 @@ public class Function {
 
     public static String getJavaVersion() {
         return String.join(" - ", System.getProperty("java.home"), System.getProperty("java.version"));
+    }
+
+    /**
+     * This function listens at endpoint "/api/StaticWebPage".
+     * It can be used to read and serve a static web page.
+     * Note: Read the file from the right location for local machine and azure portal usage.
+     */
+    @FunctionName("StaticWebPage")
+    public HttpResponseMessage getStaticWebPage(
+        @HttpTrigger(
+            name = "req",
+            methods = {HttpMethod.GET, HttpMethod.POST},
+            authLevel = AuthorizationLevel.ANONYMOUS)
+        HttpRequestMessage<Optional<String>> request,
+        final ExecutionContext context) {
+        context.getLogger().info("Java HTTP trigger processed a request.");
+
+        File htmlFile = new File("index.html");
+        try{
+            byte[] fileContent = Files.readAllBytes(htmlFile.toPath());
+            return request.createResponseBuilder(HttpStatus.OK).body(fileContent).build();
+        }catch (Exception e){
+            context.getLogger().info("Error reading file.");
+            return request.createResponseBuilder(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 }
