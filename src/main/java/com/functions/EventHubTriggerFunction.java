@@ -23,6 +23,34 @@ public class EventHubTriggerFunction {
         output.setValue(messages.get(0));
     }
 
+    @FunctionName("EventHubTriggerCardinalityOneEventMetadata")
+    public void run(
+            @EventHubTrigger(
+                name = "message",
+                eventHubName = "test-input-java",
+                consumerGroup = "$default",
+                connection = "AzureWebJobsEventHubSender",
+                cardinality = Cardinality.ONE
+            ) String message,
+            final ExecutionContext context,
+            @BindingName("Properties") Map<String, Object> properties,
+            @BindingName("SystemProperties") Map<String, Object> systemProperties,
+            @BindingName("PartitionContext") Map<String, Object> partitionContext,
+            @BindingName("EnqueuedTimeUtc") Object enqueuedTimeUtc,
+            @BindingName("Offset") Object offset,
+            @BindingName("PartitionKey") Object partitionKey,
+            @BindingName("SequenceNumber") Object sequenceNumber) {
+        // Parse query parameter
+        context.getLogger().info("Java Event Hub trigger received message" + message);
+        context.getLogger().info("Properties: " + properties);
+        context.getLogger().info("System Properties: " + systemProperties);
+        context.getLogger().info("PartitionContext: " + partitionContext);
+        context.getLogger().info("EnqueuedTimeUtc: " + enqueuedTimeUtc);
+        context.getLogger().info("Offset: " + offset);
+        context.getLogger().info("PartitionKey: " + partitionKey);
+        context.getLogger().info("SequenceNumber: " + sequenceNumber);
+    }
+
     @FunctionName("EventHubTriggerAndOutputString")
     public void EventHubTriggerAndOutputString(
         @EventHubTrigger(name = "messages", eventHubName = "test-input-java", connection = "AzureWebJobsEventHubSender", dataType = "string", cardinality = Cardinality.MANY) String[] messages,
