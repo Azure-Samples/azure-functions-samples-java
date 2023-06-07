@@ -22,6 +22,18 @@ public class ServiceBusTopicTriggerFunction {
         output.setValue(message);
     }
 
+    @FunctionName("ServiceBusTopicTriggerMetadata")
+    public void serviceBusTopicTriggerMetadata(
+        @ServiceBusTopicTrigger(name = "message", topicName = "SBTopicNameMetadata", subscriptionName = "SBTopicNameMetadataSubName", connection = "AzureWebJobsServiceBus") String message,
+        @BindingName("UserProperties") Map<String, Object> properties,
+        @BindingName("CorrelationId") String correlationId,
+        final ExecutionContext context
+    ) {
+        context.getLogger().info("Java Service Bus Topic trigger function processed a message: " + message);
+        context.getLogger().info("Custom message properties = " + properties);
+        context.getLogger().info("CorrelationId = " + correlationId);
+    }
+
     @FunctionName("ServiceBusTopicBatchTrigger")
     public void serviceBusTopicBatchTrigger(
         @ServiceBusTopicTrigger(name = "message", topicName = "SBTopicNameBatch", subscriptionName = "SBTopicNameBatchSubName", connection = "AzureWebJobsServiceBus", cardinality = Cardinality.MANY, dataType = "String") List<String> messages,
