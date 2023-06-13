@@ -23,6 +23,61 @@ public class EventHubTriggerFunction {
         output.setValue(messages.get(0));
     }
 
+    @FunctionName("EventHubTriggerCardinalityOneEventMetadata")
+    public void EventHubTriggerCardinalityOneEventMetadata(
+            @EventHubTrigger(
+                name = "message",
+                eventHubName = "test-input-java",
+                consumerGroup = "$default",
+                connection = "AzureWebJobsEventHubSender",
+                cardinality = Cardinality.ONE
+            ) String message,
+            final ExecutionContext context,
+            @BindingName("Properties") Map<String, Object> properties,
+            @BindingName("SystemProperties") Map<String, Object> systemProperties,
+            @BindingName("PartitionContext") Map<String, Object> partitionContext,
+            @BindingName("EnqueuedTimeUtc") Object enqueuedTimeUtc,
+            @BindingName("Offset") Object offset,
+            @BindingName("PartitionKey") Object partitionKey,
+            @BindingName("SequenceNumber") Object sequenceNumber) {
+        // Parse query parameter
+        context.getLogger().info("Java Event Hub trigger received message" + message);
+        context.getLogger().info("Properties: " + properties);
+        context.getLogger().info("System Properties: " + systemProperties);
+        context.getLogger().info("PartitionContext: " + partitionContext);
+        context.getLogger().info("EnqueuedTimeUtc: " + enqueuedTimeUtc);
+        context.getLogger().info("Offset: " + offset);
+        context.getLogger().info("PartitionKey: " + partitionKey);
+        context.getLogger().info("SequenceNumber: " + sequenceNumber);
+    }
+
+    @FunctionName("EventHubTriggerCardinalityManyEventMetadata")
+    public void EventHubTriggerCardinalityManyEventMetadata(
+        @EventHubTrigger(
+            name = "messages",
+            eventHubName = "test-input-java",
+            connection = "AzureWebJobsEventHubSender",
+            dataType = "string",
+            cardinality = Cardinality.MANY
+        ) String[] messages,
+        @BindingName("PropertiesArray") Map<String, Object>[] propertiesArray,
+        @BindingName("SystemPropertiesArray") Map<String, Object>[] systemPropertiesArray,
+        @BindingName("EnqueuedTimeUtcArray") List<Object> enqueuedTimeUtcArray,
+        @BindingName("OffsetArray") List<String> offsetArray,
+        @BindingName("PartitionKeyArray") List<String> partitionKeyArray,
+        @BindingName("SequenceNumberArray") List<Long> sequenceNumberArray,
+        final ExecutionContext context
+    ) {
+        context.getLogger().info("Java Event Hub trigger received " + messages.length + " messages");
+        context.getLogger().info("message[0]=" + messages[0]);
+        context.getLogger().info("Properties for message[0]=" + propertiesArray[0]);
+        context.getLogger().info("SystemProperties for message[0]="+ systemPropertiesArray[0]);
+        context.getLogger().info("EnqueuedTimeUtc for message[0]=" + enqueuedTimeUtcArray.get(0));
+        context.getLogger().info("Offset for message[0]=" + offsetArray.get(0));
+        context.getLogger().info("PartitionKey for message[0]=" + partitionKeyArray.get(0));
+        context.getLogger().info("SequenceNumber for message[0]=" + sequenceNumberArray.get(0));
+    }
+
     @FunctionName("EventHubTriggerAndOutputString")
     public void EventHubTriggerAndOutputString(
         @EventHubTrigger(name = "messages", eventHubName = "test-input-java", connection = "AzureWebJobsEventHubSender", dataType = "string", cardinality = Cardinality.MANY) String[] messages,
