@@ -27,6 +27,7 @@ This repository contains samples which show the basic usage of [Azure Functions]
 | [ServiceBusTopicTrigger](./src/main/java/com/functions/ServiceBusTopicTriggerFunction.java) | ServiceBusTopicTrigger to read message from a topic in service bus and output to service bus topic using ServiceBusTopicOutput binding.  |
 | [Table function](./src/main/java/com/functions/TableFunction.java) | Basic example to read and write to table in Azure Storage using TableInput and TableOutput binding.  |
 | [Durable Function](./src/main/java/com/functions/DurableFunction.java) | Durable function example to start an orchestration and follow activity chaining.  |
+| [Distributed Tracing](./src/main/java/com/functions/DistributedTracingFunction.java) | Distributed tracing example that adds entries to a MYSQL database via JDBC, adds custom metrics to the Application Insights and outputs to cosmos DB CosmosDBOutput binding.  |
 
 
 ## Contents

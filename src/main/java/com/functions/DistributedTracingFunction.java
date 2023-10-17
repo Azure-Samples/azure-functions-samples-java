@@ -18,15 +18,15 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Random;
 
-public class Function {
-    @FunctionName("JDBCTest")
+public class DistributedTracingFunction {
+    @FunctionName("JDBCAndCosmosOutput")
     @CosmosDBOutput(
         name = "itemOut",
-        databaseName = "database",
-        containerName = "itemsOut",
-        connection = "Cosmos"
+        databaseName = "%CosmosDBDatabaseName%",
+        containerName = "ItemCollectionOut",
+        connection = "AzureWebJobsCosmosDBConnectionString"
     )
-    public String run(
+    public String jdbcAndCosmosOutput(
             @HttpTrigger(
                 name = "req",
                 methods = {HttpMethod.GET, HttpMethod.POST},
