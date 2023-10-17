@@ -18,7 +18,18 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Random;
 
+/**
+ * Azure Functions with custom metrics and MySQL connection that is visible in Application Insights
+ * when distributed tracing is enabled.
+ * https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-add-modify?tabs=java
+ * 
+ */
 public class DistributedTracingFunction {
+    /**
+     * This function will be invoked with a GET or POST request to /api/JDBCAndCosmosOutput. 
+     * Once invoked, the function parses the name parameter from the request, adds a custom metric to Application Insights, 
+     * adds a new entry to the MySQL database and adds a new entry to the Azure Cosmos database.
+     */
     @FunctionName("JDBCAndCosmosOutput")
     @CosmosDBOutput(
         name = "itemOut",
