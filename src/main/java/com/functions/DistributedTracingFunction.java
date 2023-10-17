@@ -59,8 +59,8 @@ public class DistributedTracingFunction {
         String password = System.getenv("JDBCPassword");
         String publicIp = System.getenv("JDBCIP");
         String connectionUrl = "jdbc:mysql://" + publicIp + ":3306/jdbcdemo";
-        try (Connection con = DriverManager.getConnection(connectionUrl, user, password)) {
-            PreparedStatement ps = con.prepareStatement(sqlInsertName);
+        try (Connection con = DriverManager.getConnection(connectionUrl, user, password);
+        PreparedStatement ps = con.prepareStatement(sqlInsertName)) {
             ps.setString(1, entry);
             ps.executeUpdate();
         } catch (SQLException e) {
