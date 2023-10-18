@@ -9,41 +9,44 @@ description: "This repository contains sample for Azure Functions in Java"
 urlFragment: "azure-functions-java"
 ---
 
-# Azure Functions samples in Java
+# Azure functions samples in Java
 
-This repository contains samples which show the basic usage of [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java for the below scenarios.
+This repository contains samples which show the usage of [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java for the below scenarios.
 
 | Scenario       | Description                                |
 |-------------------|--------------------------------------------|
-| [HttpTrigger](./src/main/java/com/functions/Function.java) | Basic HttpTrigger and FixedDelayRetry with HttpTrigger.  |
-| [BlobTrigger](./src/main/java/com/functions/BlobTriggerFunction.java) | BlobTrigger, read blob using BlobInput binding and output to blob using BlobOutput binding.  |
-| [CosmosDBTrigger](./src/main/java/com/functions/CosmosDBTriggerFunction.java)  | CosmosDBTrigger, read cosmos DB entries with CosmosDBInput binding and output to cosmos DB CosmosDBOutput binding.  |
-| [TimerTrigger](./src/main/java/com/functions/TimerTriggerFunction.java) | Basic periodic TimerTrigger.  |
-| [EventGridTrigger](./src/main/java/com/functions/EventGridTriggerFunction.java) | EventGridTrigger and send event to Event Grid using EventGridOutput binding.  |
-| [EventHubTrigger](./src/main/java/com/functions/EventHubTriggerFunction.java) | EventHubTrigger for message received in event grid and output to event grid using EventHubOutput binding.  |
-| [KafkaTrigger](./src/main/java/com/functions/KafkaTriggerFunction.java) | KafkaTrigger with KafkaOutput and QueueOutput example.  |
-| [QueueTrigger](./src/main/java/com/functions/QueueTriggerFunction.java) | QueueTrigger to read content from queue and output to queue using QueueOutput binding.  |
-| [ServiceBusQueueTrigger](./src/main/java/com/functions/ServiceBusQueueTriggerFunction.java) | ServiceBusQueueTrigger to read message from a queue in service bus and output to service bus queue using ServiceBusQueueOutput binding.  |
-| [ServiceBusTopicTrigger](./src/main/java/com/functions/ServiceBusTopicTriggerFunction.java) | ServiceBusTopicTrigger to read message from a topic in service bus and output to service bus topic using ServiceBusTopicOutput binding.  |
-| [Table function](./src/main/java/com/functions/TableFunction.java) | Basic example to read and write to table in Azure Storage using TableInput and TableOutput binding.  |
-| [Durable Function](./src/main/java/com/functions/DurableFunction.java) | Durable function example to start an orchestration and follow activity chaining.  |
-| [Distributed Tracing](./src/main/java/com/functions/DistributedTracingFunction.java) | Distributed tracing example that adds entries to a MYSQL database via JDBC, adds custom metrics to the Application Insights and outputs to cosmos DB CosmosDBOutput binding.  |
+| [HttpTrigger](./triggers-bindings/src/main/java/com/functions/Function.java) | Basic HttpTrigger and FixedDelayRetry with HttpTrigger.  |
+| [BlobTrigger](./triggers-bindings/src/main/java/com/functions/BlobTriggerFunction.java) | BlobTrigger, read blob using BlobInput binding and output to blob using BlobOutput binding.  |
+| [CosmosDBTrigger](./triggers-bindings/src/main/java/com/functions/CosmosDBTriggerFunction.java)  | CosmosDBTrigger, read cosmos DB entries with CosmosDBInput binding and output to cosmos DB CosmosDBOutput binding.  |
+| [TimerTrigger](./triggers-bindings/src/main/java/com/functions/TimerTriggerFunction.java) | Basic periodic TimerTrigger.  |
+| [EventGridTrigger](./triggers-bindings/src/main/java/com/functions/EventGridTriggerFunction.java) | EventGridTrigger and send event to Event Grid using EventGridOutput binding.  |
+| [EventHubTrigger](./triggers-bindings/src/main/java/com/functions/EventHubTriggerFunction.java) | EventHubTrigger for message received in event grid and output to event grid using EventHubOutput binding.  |
+| [KafkaTrigger](./triggers-bindings/src/main/java/com/functions/KafkaTriggerFunction.java) | KafkaTrigger with KafkaOutput and QueueOutput example.  |
+| [QueueTrigger](./triggers-bindings/src/main/java/com/functions/QueueTriggerFunction.java) | QueueTrigger to read content from queue and output to queue using QueueOutput binding.  |
+| [ServiceBusQueueTrigger](./triggers-bindings/src/main/java/com/functions/ServiceBusQueueTriggerFunction.java) | ServiceBusQueueTrigger to read message from a queue in service bus and output to service bus queue using ServiceBusQueueOutput binding.  |
+| [ServiceBusTopicTrigger](./triggers-bindings/src/main/java/com/functions/ServiceBusTopicTriggerFunction.java) | ServiceBusTopicTrigger to read message from a topic in service bus and output to service bus topic using ServiceBusTopicOutput binding.  |
+| [Table function](./triggers-bindings/src/main/java/com/functions/TableFunction.java) | Basic example to read and write to table in Azure Storage using TableInput and TableOutput binding.  |
+| [Durable function](./triggers-bindings/src/main/java/com/functions/DurableFunction.java) | Durable function example to start an orchestration and follow activity chaining.  |
+| [Distributed tracing](./triggers-bindings/src/main/java/com/functions/DistributedTracingFunction.java) | Distributed tracing example that adds entries to a MYSQL database via JDBC, adds custom metrics to the Application Insights and outputs to cosmos DB CosmosDBOutput binding.  |
+| [Dependency injection - Dagger](./dependency-injection/dagger-function/src/main/java/com/azfs/Function.java) | Dagger example that shows the usage of dependency injection with azure functions.  |
+| [Dependency injection - Guice](./dependency-injection/guice-function/src/main/java/com/azfs/Function.java) | Google guice example that shows the usage of dependency injection with azure functions.  |
+| [Spring cloud](./spring-cloud/src/main/java/example/uppercase/UppercaseHandler.java) | Usage of Spring cloud to develop a function.  |
 
 
 ## Contents
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+Outlines the contents of this repository. It helps users navigate the codebase, build configuration and any related assets.
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
+| `triggers-bindings`      | Triggers and bindings available in Azure functions.    |
+| `dependency-injection`   | Integration of Google Guice and Dagger with Azure Functions.      |
+| `spring-cloud`           | Usage of Spring cloud to develop a Java function.      |
 | `.gitignore`      | Define what to ignore at commit time.      |
-| `build.gradle`    | The gradle configuration to this sample.   |
-| `pom.xml`         | The maven configuration to this sample.   |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
 | `README.md`       | This README file.                          |
-| `LICENSE.txt`         | The license for the sample.                |
+| `LICENSE.txt`     | The license for the sample.                |
 
 ## Prerequisites
 
@@ -52,6 +55,8 @@ Outline the file contents of the repository. It helps users navigate the codebas
 - Azure CLI. This plugin use Azure CLI for authentication, please make sure you have Azure CLI installed and logged in.
 
 ## Setup
+
+- Please refer individual directories for sample specific setup. Some common setup instructions are provided below.
 
 - ```cmd
     az login
