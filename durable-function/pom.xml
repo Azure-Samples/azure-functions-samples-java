@@ -23,6 +23,13 @@
             <artifactId>azure-functions-java-library</artifactId>
             <version>${azure.functions.java.library.version}</version>
         </dependency>
+		
+		<dependency>
+            <groupId>com.microsoft</groupId>
+            <artifactId>durabletask-azure-functions</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+		
         <!-- Test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
