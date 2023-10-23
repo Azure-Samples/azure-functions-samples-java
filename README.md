@@ -42,6 +42,8 @@ Outlines the contents of this repository. It helps users navigate the codebase, 
 | `triggers-bindings`      | Triggers and bindings available in Azure functions.    |
 | `dependency-injection`   | Integration of Google Guice and Dagger with Azure Functions.      |
 | `spring-cloud`           | Usage of Spring cloud to develop a Java function.      |
+| `distributed-tracing`        | Sample that shows the usage of distributed tracing coupled with azure functions.      |
+| `durable-function`           | Durable function example to run orchestrations and activities.      |
 | `.gitignore`      | Define what to ignore at commit time.      |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
